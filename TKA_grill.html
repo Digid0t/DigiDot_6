@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TKA Grillhaus in Erfurt - Türkische Spezialitäten, Döner, Pizza und mehr. Berliner Straße 3, 99091 Erfurt">
+    <title>TKA Grillhaus - Speisekarte Erfurt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #c0392b;
+            --secondary-color: #e67e22;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --success-color: #27ae60;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%);
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--card-shadow);
+            transition: padding 0.3s ease-in-out;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease-in-out;
+            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: font-size 0.3s ease-in-out;
+        }
+
+        header.scrolled {
+            padding: 0.25rem 0;
+        }
+
+        header.scrolled .logo {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+        }
+
+        header.scrolled h1 {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .call-button {
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .call-button:hover {
+            transform: scale(1.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .header-cart {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background-color: var(--dark-color);
+            color: white;
+            font-size: 0.8rem;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23c0392b" width="1200" height="400"/><text x="600" y="200" font-size="120" fill="white" text-anchor="middle" font-family="Arial">TKA</text></svg>') center/cover;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-color);
+            box-shadow: var(--hover-shadow);
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 2.5rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .menu-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-btn {
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .menu-item-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+        }
+
+        .menu-item-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem;
+        }
+
+        .menu-item-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item-title .item-number {
+            font-size: 0.9rem;
+            font-weight: normal;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            padding: 0.2rem 0.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .menu-item-body {
+            padding: 1rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item-description {
+            color: #666;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .price-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .add-to-cart-btn {
+            background-color: var(--success-color);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #229954;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 2rem;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 15px;
+            position: relative;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            color: #aaa;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-close:hover {
+            color: black;
+        }
+
+        #cart-items-container .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        #cart-items-container .cart-item-details {
+            flex-grow: 1;
+        }
+
+        #cart-items-container .cart-item-name {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        #cart-items-container .cart-item-price {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        #cart-items-container .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #cart-items-container .quantity-btn,
+        #cart-items-container .remove-btn {
+            background: #eee;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        #cart-items-container .remove-btn {
+            background-color: #ffdddd;
+            color: var(--primary-color);
+        }
+
+        #cart-total {
+            text-align: right;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            color: var(--primary-color);
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .modal-btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #a93226;
+        }
+
+        .btn-secondary {
+            background-color: #ccc;
+        }
+
+        .btn-secondary:hover {
+            background-color: #aaa;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        #confirmation-summary {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .contact-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 9999;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--light-color);
+            border-top-color: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .image-modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 3001;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-color);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-categories {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p>Lade Menü...</p>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo">🍢</div>
+                <h1>TKA Grillhaus</h1>
+            </div>
+            <nav>
+                <a href="tel:+493617443811" class="call-button" title="Jetzt anrufen" aria-label="Anrufen">📞</a>
+                <div class="header-cart" onclick="toggleCartModal()" aria-label="Warenkorb öffnen">
+                    🛒
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menü öffnen">☰</button>
+                <ul id="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menü</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Willkommen im TKA Grillhaus</h2>
+            <p>Direkt an der Berliner Straße - Für die ganze Familie!</p>
+            <a href="#menu" class="cta-button">Jetzt Menü entdecken</a>
+        </div>
+    </section>
+
+    <section style="background: white; padding: 2.5rem 1rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Für jeden etwas dabei</h2>
+
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%); padding: 1.5rem; border-radius: 12px; box-shadow: var(--card-shadow);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.8rem; font-size: 1.3rem;">Willkommen in der Familie</h3>
+                    <p style="line-height: 1.7; color: #555; font-size: 0.95rem;">
+                        Direkt an der <strong>Berliner Straße</strong> steht unser frisch renoviertes Grillhaus.
+                        Egal ob Oma und Opa, Mama oder die Kids - bei uns findet jeder was Leckeres.
+                    </p>
+                </div>
+
+                <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #ffe8cc 0%, #ffd9b3 100%); padding: 1.5rem; border-radius: 12px; box-shadow: var(--card-shadow);">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 0.8rem; font-size: 1.3rem;">Riesige Auswahl</h3>
+                    <p style="line-height: 1.7; color: #555; font-size: 0.95rem;">
+                        Von klassischem Döner über knusprige Steinofen-Pizza bis zu köstlichen Nudelgerichten.
+                        Türkische Spezialitäten, handgemachte Pide und vegetarische Highlights.
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--primary-color);">
+                <h3 style="color: var(--dark-color); margin-bottom: 1rem; font-size: 1.2rem; text-align: center;">Unsere Besonderheiten</h3>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.4rem;">🪑</span>
+                        <span style="color: #555; font-weight: 500; font-size: 0.95rem;">Sitzplätze</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.4rem;">♿</span>
+                        <span style="color: #555; font-weight: 500; font-size: 0.95rem;">Barrierefrei</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.4rem;">🚻</span>
+                        <span style="color: #555; font-weight: 500; font-size: 0.95rem;">Gepflegte WC</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.4rem;">🚚</span>
+                        <span style="color: #555; font-weight: 500; font-size: 0.95rem;">Lieferung</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2 class="section-title">Unsere Speisekarte</h2>
+        <div class="menu-categories" id="menu-categories"></div>
+        <div class="menu-grid" id="menu-container"></div>
+    </section>
+
+    <section id="gallery" style="background: #f8f9fa;">
+        <h2 class="section-title">Impressionen</h2>
+        <div class="gallery-grid" id="gallery-grid"></div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Kontakt & Öffnungszeiten</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Adresse</h3>
+                <p style="margin-bottom: 0.8rem; line-height: 1.6;">
+                    <strong>Berliner Straße 3</strong><br>
+                    99091 Erfurt<br>
+                    Deutschland
+                </p>
+                <a href="https://www.google.com/maps?cid=13960229570428993919" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; font-size: 0.9rem; margin-bottom: 0.8rem; transition: background 0.3s;">📍 Route planen</a>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10000!2d11.029844!3d50.978389!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc1c1f43ddb3dcdff!2sTKA+Grillhaus!5e0!3m2!1sde!2sde!4v1640000000000"
+                    width="100%"
+                    height="180"
+                    style="border:0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3>Telefon</h3>
+                <p><a href="tel:+493617443811" style="color: var(--primary-color); text-decoration: none; font-weight: bold; font-size: 1.1rem;">+49 361 7443811</a></p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">🕐</div>
+                <h3>Öffnungszeiten</h3>
+                <table style="margin: 0.8rem auto 0; text-align: left; width: 100%; max-width: 220px; font-size: 0.9rem;">
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 0.4rem 0.5rem; font-weight: 500;">Mo</td>
+                        <td style="padding: 0.4rem 0.5rem; color: #999;">Geschlossen</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.4rem 0.5rem; font-weight: 500;">Di-So</td>
+                        <td style="padding: 0.4rem 0.5rem;">12:00-21:00</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 TKA Grillhaus. Alle Rechte vorbehalten.</p>
+            <p>Mit Liebe für die ganze Familie</p>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="toggleCartModal()">×</span>
+            <h2>Dein Warenkorb</h2>
+            <div id="cart-items-container"></div>
+            <div id="cart-total">Gesamt: 0.00 €</div>
+            <div class="modal-actions">
+                <button class="modal-btn btn-secondary" onclick="toggleCartModal()">Weiter einkaufen</button>
+                <button class="modal-btn btn-primary" id="checkout-btn" onclick="showOrderForm()">Bestellen</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="toggleOrderModal()">×</span>
+            <div id="order-step-1">
+                <h2>Deine Daten</h2>
+                <form id="order-form">
+                    <div class="form-group">
+                        <label for="customer-name">Name</label>
+                        <input type="text" id="customer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-address">Adresse</label>
+                        <input type="text" id="customer-address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-phone">Telefonnummer</label>
+                        <input type="tel" id="customer-phone" required>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="modal-btn btn-secondary" onclick="backToCart()">Zurück</button>
+                        <button type="submit" class="modal-btn btn-primary">Weiter</button>
+                    </div>
+                </form>
+            </div>
+            <div id="order-step-2" style="display: none;">
+                <h2>Bestellung bestätigen</h2>
+                <div id="confirmation-summary">
+                    <h4>Deine Daten:</h4>
+                    <p id="confirm-name"></p>
+                    <p id="confirm-address"></p>
+                    <p id="confirm-phone"></p>
+                    <hr>
+                    <h4>Bestellung:</h4>
+                    <div id="confirm-items"></div>
+                    <h4 id="confirm-total" style="text-align: right;"></h4>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; font-weight: bold;">
+                    Barzahlung bei Abholung/Lieferung
+                </p>
+                <div class="modal-actions">
+                    <button class="modal-btn btn-secondary" onclick="backToOrderForm()">Zurück</button>
+                    <button class="modal-btn btn-primary" onclick="submitOrder()">Bestellen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="image-modal" class="image-modal" onclick="closeImageModal()">
+        <span class="image-modal-close" onclick="closeImageModal()">×</span>
+        <img class="image-modal-content" id="modal-image" alt="Vollbild">
+    </div>
+
+    <script>
+        const menuData = {"menu_title_de":"Speisekarte","menu_title_tr":"Menü","categories":[{"category_id":"A","category_de":"Drehspieß-Spezialitäten (Döner)","category_tr":"Döner Çeşitleri","items":[{"id":"D01","name_de":"Drehspieß Kalb (Tasche)","description_de":"Kalbfleisch, Salat und Soße im Fladenbrot","price_eur":6.00},{"id":"D05","name_de":"Drehspieß Hähnchen (Tasche)","description_de":"Hähnchenfleisch, Salat und Soße im Fladenbrot","price_eur":6.00},{"id":"D11","name_de":"Big Drehspieß (Tasche)","description_de":"Extra viel Kalb- oder Hähnchenfleisch, Salat und Soße im Fladenbrot","price_eur":7.00},{"id":"D02","name_de":"Dürüm Drehspieß Kalb","description_de":"Kalbfleisch, Salat und Soße in Teigrolle","price_eur":7.00},{"id":"D06","name_de":"Dürüm Drehspieß Hähnchen","description_de":"Hähnchenfleisch, Salat und Soße in Teigrolle","price_eur":7.00},{"id":"D03","name_de":"Drehspieß Teller Kalb","description_de":"Kalbfleisch, Salat und Soße. Beilage: Pommes, Reis, Nudeln oder Brot","price_eur":9.00},{"id":"D07","name_de":"Drehspieß Teller Hähnchen","description_de":"Hähnchenfleisch, Salat und Soße. Beilage: Pommes, Reis, Nudeln oder Brot","price_eur":9.00},{"id":"D04","name_de":"Iskender Drehspieß","description_de":"Kalbfleisch auf gerösteten Brotwürfeln, Butter, Tomatensoße, Joghurt","price_eur":9.00},{"id":"D12","name_de":"Drehspieß mit Käse","description_de":"Kalb- oder Hähnchenfleisch, Feta Käse, Salat und Soße im Fladenbrot","price_eur":7.00},{"id":"D13","name_de":"Halloumi Drehspieß (Tasche)","description_de":"Kalb- oder Hähnchenfleisch, frittierter Halloumikäse, Salat und Soße im Fladenbrot","price_eur":7.50},{"id":"D14","name_de":"Halloumi Dürüm (Drehspieß)","description_de":"Kalb- oder Hähnchenfleisch, frittierter Halloumikäse, Salat und Soße in Teigrolle","price_eur":8.50},{"id":"D15","name_de":"Drehspieß Auflauf","description_de":"Kalb- oder Hähnchenfleisch in Sahne- oder Tomatensoße, mit Käse überbacken. Beilage: Pommes, Reis oder Nudeln","price_eur":10.00}]},{"category_id":"B","category_de":"Pide, Lahmacun & Türkische Spezialitäten","category_tr":"Pide ve Lahmacun","items":[{"id":"F57","name_de":"Lahmacun","description_de":"Teigrolle mit Hackfleisch, Paprika, Salat und Soße","price_eur":7.00},{"id":"F58","name_de":"Lahmacun mit Drehspießfleisch","description_de":"Teigrolle mit Drehspießfleisch, Paprika, Salat und Soße","price_eur":8.00},{"id":"F51","name_de":"Türkische Pide","description_de":"Drehspießfleisch, Soße und Käse","price_eur":9.00},{"id":"F52","name_de":"Pide mit Sucuk","description_de":"Knoblauchwurst, Peperoni, Zwiebeln und Tomaten","price_eur":9.00},{"id":"F54","name_de":"Pide mit Salami","description_de":"Salami mit Paprika, Zwiebeln, Tomatenmark und Käse","price_eur":9.00},{"id":"F55","name_de":"Pide mit Salami und Ei","description_de":"Salami mit Paprika, Zwiebeln, Tomatenmark, Käse und Ei","price_eur":9.50},{"id":"F56","name_de":"Pide mit Käse","description_de":"Tomaten, Paprika, Zwiebeln und extra Käse","price_eur":9.00},{"id":"F59","name_de":"Pide mit Hackfleisch","description_de":"Hackfleisch mit Tomaten, Zwiebeln","price_eur":9.00},{"id":"F60","name_de":"Pide mit Hackfleisch und Ei","description_de":"Hackfleisch mit Tomaten, Zwiebeln, Gurken und Ei","price_eur":9.50},{"id":"F61","name_de":"Spinat Pide","description_de":"Spinat mit Käse","price_eur":9.00}]},{"category_id":"C","category_de":"Vegetarische Spezialitäten","category_tr":"Vejetaryen Çeşitleri","items":[{"id":"V65","name_de":"Veggie Tasche","description_de":"Salat und Soße im Fladenbrot","price_eur":4.50},{"id":"V66","name_de":"Veggie Dürüm","description_de":"Salat und Soße in Teigrolle","price_eur":5.50},{"id":"V67","name_de":"Veggie Gemüse Tasche","description_de":"Frittiertes Gemüse, Salat und Soße im Fladenbrot","price_eur":6.00},{"id":"V68","name_de":"Veggie Gemüse Dürüm","description_de":"Frittiertes Gemüse, Salat und Soße in Teigrolle","price_eur":6.00},{"id":"V69","name_de":"Veggie Falafel Tasche","description_de":"Frittierte Kichererbsenbällchen, Salat und Soße im Fladenbrot","price_eur":6.00},{"id":"V70","name_de":"Falafel Dürüm","description_de":"Frittierte Kichererbsenbällchen, Salat und Soße in Teigrolle","price_eur":6.50},{"id":"V71","name_de":"Falafel Teller","description_de":"Frittierte Kichererbsenbällchen, Salat und Soße. Beilage: Pommes, Reis, Nudeln oder Brot","price_eur":9.00},{"id":"V72","name_de":"Halloumi Tasche","description_de":"Frittierter Halloumi Käse, Salat und Soße im Fladenbrot","price_eur":6.50},{"id":"V73","name_de":"Halloumi Dürüm","description_de":"Frittierter Halloumi Käse, Salat und Soße in Teigrolle","price_eur":7.00},{"id":"V74","name_de":"Halloumi Teller","description_de":"Frittierter Halloumi Käse, Salat und Soße. Beilage: Pommes, Reis, Nudeln oder Brot","price_eur":9.50}]},{"category_id":"D","category_de":"Schnitzel-Gerichte","category_tr":"Şinitzel","items":[{"id":"S01","name_de":"Schnitzel Wiener Art","description_de":"Paniertes Putenfleisch, Zitrone und Salat","price_eur":8.00},{"id":"S02","name_de":"Schnitzel Zigeuner Art","description_de":"Paniertes Putenfleisch, Zigeunersoße, Salat. Beilage: Pommes oder Reis","price_eur":9.00},{"id":"S03","name_de":"Schnitzel Champignon Art","description_de":"Paniertes Putenfleisch, Pilze, Sahnesoße, Salat. Beilage: Pommes oder Reis","price_eur":9.00}]},{"category_id":"E","category_de":"Nudelgerichte","category_tr":"Makarna","items":[{"id":"N20","name_de":"Napoli","description_de":"Spaghetti oder Rigatoni, Tomatensoße","price_eur":6.50},{"id":"N21","name_de":"Bolognese","description_de":"Spaghetti oder Rigatoni, Hackfleischsoße","price_eur":7.00},{"id":"N22","name_de":"Spinat","description_de":"Spaghetti oder Rigatoni, Spinat, Sahnesoße","price_eur":8.00},{"id":"N23","name_de":"Brokkoli","description_de":"Spaghetti oder Rigatoni, Brokkoli, Sahnesoße","price_eur":8.00},{"id":"N24","name_de":"Drehspieß","description_de":"Spaghetti oder Rigatoni, Kalb- oder Hähnchenfleisch, Sahne- oder Tomatensoße","price_eur":8.00},{"id":"N25","name_de":"Funghi","description_de":"Spaghetti oder Rigatoni, Schinken, Pilze, Sahnesoße","price_eur":8.00},{"id":"N26","name_de":"Carbonara","description_de":"Spaghetti oder Rigatoni, Schinken, Ei, Sahnesoße","price_eur":8.00}]},{"category_id":"F","category_de":"Steinofen Pizzen (30 cm)","category_tr":"Taş Fırın Pizza","items":[{"id":"P30","name_de":"Pizza Margherita","description_de":"Soße und Käse","price_eur":6.00},{"id":"P31","name_de":"Pizza Salami","description_de":"Salami, Soße und Käse","price_eur":7.00},{"id":"P33","name_de":"Pizza Spinat","description_de":"Spinat, Zwiebeln, Soße und Feta Käse","price_eur":7.00},{"id":"P34","name_de":"Pizza Schinken & Salami","description_de":"Schinken, Salami, Soße und Käse","price_eur":7.50},{"id":"P36","name_de":"Pizza Thunfisch","description_de":"Thunfisch, Soße und Käse","price_eur":7.50},{"id":"P37","name_de":"Pizza Hawaii","description_de":"Schinken, Ananas, Soße und Käse","price_eur":7.50},{"id":"P42","name_de":"Pizza Drehspieß","description_de":"Drehspießfleisch, Zwiebeln, Paprika, Soße und Käse","price_eur":8.00},{"id":"P46","name_de":"Pizza Sucuk","description_de":"Knoblauchwurst, Tomaten, Peperoni, Soße und Käse","price_eur":8.50},{"id":"P49","name_de":"Pizza Calzone","description_de":"Thunfisch, Zwiebeln, Champignons, Soße und Käse","price_eur":8.50}]},{"category_id":"G","category_de":"Salate","category_tr":"Salata","items":[{"id":"G01","name_de":"Gemischter Salat","description_de":"Eisberg, Rapsöl, Weißkraut, Tomaten, Gurken, Mais, Karotten","price_eur":4.50},{"id":"G02","name_de":"Mozzarella Salat","description_de":"Mozzarella, Tomaten, Olivenöl, Balsamico, Dressing","price_eur":6.00},{"id":"G03","name_de":"Falafel Salat","description_de":"Frittierte Kichererbsenbällchen und Dressing","price_eur":6.00},{"id":"G04","name_de":"Hirten Salat","description_de":"Eisbergsalat, Tomaten, Gurken, Mais, Feta, Dressing","price_eur":6.00},{"id":"G05","name_de":"Hawaii Salat","description_de":"Schinken, Ananas, Edamer, Eisbergsalat, Gurken, Mais, Dressing","price_eur":6.00},{"id":"G06","name_de":"Drehspieß Salat","description_de":"Drehspieß Kalb- und Hähnchenfleisch, Salat, Dressing","price_eur":6.00},{"id":"G07","name_de":"Thunfischsalat","description_de":"Thunfisch, Eisbergsalat, Tomaten, Gurken, Zwiebeln, Dressing","price_eur":6.00},{"id":"G08","name_de":"Halloumi Salat","description_de":"Frittierter Halloumikäse, Salat, Dressing","price_eur":6.00}]},{"category_id":"H","category_de":"Kindergerichte","category_tr":"Çocuk Menüsü","items":[{"id":"K01","name_de":"Pommes Klein","description_de":"Mit Ketchup oder Mayonnaise","price_eur":2.00},{"id":"K02","name_de":"Nuggets (7 Stück)","description_de":"Paniertes Hähnchenfleisch, frittiert","price_eur":4.00},{"id":"K03","name_de":"Drehspieß Box Klein","description_de":"Drehspießfleisch, Soße und Pommes oder Nudeln","price_eur":5.00},{"id":"K04","name_de":"Drehspieß Box Normal","description_de":"Drehspießfleisch, Soße und Pommes oder Nudeln","price_eur":6.00}]},{"category_id":"I","category_de":"Desserts","category_tr":"Tatlılar","items":[{"id":"T01","name_de":"Paklawa","description_de":"Türkisches Gebäck/Kuchen","price_eur":1.00},{"id":"T02","name_de":"Börek Vegan","description_de":"Veganes Börek","price_eur":1.00}]},{"category_id":"J","category_de":"Getränke","category_tr":"İçecekler","items":[{"id":"J01","name_de":"Tee","price_eur":1.00},{"id":"J02","name_de":"Kaffee","price_eur":1.50},{"id":"J03","name_de":"Wasser 0,50l","price_eur":1.50},{"id":"J04","name_de":"Ayran 0,33l","price_eur":2.00},{"id":"J05","name_de":"Uludag 0,33l","price_eur":2.00},{"id":"J06","name_de":"Cola, Fanta, Sprite 0,33l","price_eur":2.00}]}]};
+
+        let cart = [];
+
+        // Galerie-Bilder - Hier können Sie Links zu Ihren Bildern einfügen
+        const galleryImages = [
+            // Beispiel-Format für Ihre eigenen Bilder:
+            // { src: 'https://raw.githubusercontent.com/username/repo/main/außen.jpg', alt: 'Außenansicht TKA Grillhaus' },
+            // { src: 'https://raw.githubusercontent.com/username/repo/main/innen.jpg', alt: 'Innenbereich' },
+            // { src: 'https://raw.githubusercontent.com/username/repo/main/küche.jpg', alt: 'Unsere Küche' },
+        ];
+
+        // Lazy Loading Observer für Bilder
+        function createImageObserver() {
+            return new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.onload = () => img.style.opacity = '1';
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            }, { rootMargin: '100px' });
+        }
+
+        const observer = createImageObserver();
+
+        // Galerie laden
+        function loadGallery() {
+            const galleryGrid = document.getElementById('gallery-grid');
+
+            if (galleryImages.length === 0) {
+                galleryGrid.innerHTML = '<p style="text-align: center; color: #999; grid-column: 1/-1; padding: 2rem;">Galerie-Bilder folgen in Kürze...</p>';
+                return;
+            }
+
+            galleryImages.forEach((image) => {
+                const div = document.createElement('div');
+                div.className = 'gallery-item';
+                div.onclick = () => openImageModal(image.src);
+
+                const img = document.createElement('img');
+                img.dataset.src = image.src;
+                img.alt = image.alt || 'TKA Grillhaus';
+                img.loading = 'lazy';
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 0.3s';
+
+                observer.observe(img);
+                div.appendChild(img);
+                galleryGrid.appendChild(div);
+            });
+        }
+
+        function openImageModal(src) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+            modal.style.display = 'block';
+            modalImg.src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('image-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function displayCategories() {
+            const container = document.getElementById('menu-categories');
+            container.innerHTML = '<button class="category-btn active" onclick="filterMenu(\'all\', this)">Alle</button>';
+            menuData.categories.forEach((cat, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'category-btn';
+                btn.textContent = cat.category_de;
+                btn.onclick = () => filterMenu(index, btn);
+                container.appendChild(btn);
+            });
+        }
+
+        function displayMenu(categoryIndex = 'all') {
+            const container = document.getElementById('menu-container');
+            container.innerHTML = '';
+
+            let categoriesToDisplay = (categoryIndex === 'all')
+                ? menuData.categories
+                : [menuData.categories[categoryIndex]];
+
+            categoriesToDisplay.forEach(category => {
+                category.items.forEach(item => {
+                    const menuItem = createMenuItem(item);
+                    container.appendChild(menuItem);
+                });
+            });
+        }
+
+        function createMenuItem(item) {
+            const div = document.createElement('div');
+            div.className = 'menu-item';
+
+            // Optional: Thumbnail-Bild (falls item.image_url vorhanden)
+            let imageHtml = '';
+            if (item.image_url) {
+                imageHtml = `<img class="menu-item-image" data-src="${item.image_url}" alt="${item.name_de}" loading="lazy" style="opacity: 0; transition: opacity 0.3s;">`;
+            }
+
+            div.innerHTML = `
+                ${imageHtml}
+                <div class="menu-item-header">
+                    <h3 class="menu-item-title">
+                        <span class="item-number">${item.id}</span>
+                        ${item.name_de}
+                    </h3>
+                </div>
+                <div class="menu-item-body">
+                    <p class="menu-item-description">${item.description_de || ''}</p>
+                    <div class="price-container">
+                        <span class="price">${item.price_eur.toFixed(2)} €</span>
+                        <button class="add-to-cart-btn" onclick='addToCart(${JSON.stringify(item).replace(/'/g, "&#39;")})'>
+                            Hinzufügen
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            // Lazy loading für Menu-Bilder
+            if (item.image_url) {
+                const img = div.querySelector('.menu-item-image');
+                if (img) observer.observe(img);
+            }
+
+            return div;
+        }
+
+        function addToCart(item) {
+            const cartItem = {
+                name: item.name_de,
+                price: item.price_eur
+            };
+
+            const existingItem = cart.find(ci => ci.name === cartItem.name);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ ...cartItem, quantity: 1 });
+            }
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartContainer = document.getElementById('cart-items-container');
+            const cartTotalEl = document.getElementById('cart-total');
+            const cartCountEl = document.getElementById('cart-count');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            cartContainer.innerHTML = '';
+            let total = 0;
+            let count = 0;
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Dein Warenkorb ist leer.</p>';
+                checkoutBtn.style.display = 'none';
+            } else {
+                checkoutBtn.style.display = 'block';
+                cart.forEach((item, index) => {
+                    const itemEl = document.createElement('div');
+                    itemEl.className = 'cart-item';
+                    itemEl.innerHTML = `
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">${item.quantity} x ${item.price.toFixed(2)} €</div>
+                        </div>
+                        <div class="cart-item-actions">
+                            <button class="quantity-btn" onclick="changeQuantity(${index}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn" onclick="changeQuantity(${index}, 1)">+</button>
+                            <button class="remove-btn" onclick="removeFromCart(${index})">×</button>
+                        </div>
+                    `;
+                    cartContainer.appendChild(itemEl);
+                    total += item.price * item.quantity;
+                    count += item.quantity;
+                });
+            }
+
+            cartTotalEl.textContent = `Gesamt: ${total.toFixed(2)} €`;
+            cartCountEl.textContent = count;
+            cartCountEl.style.display = count > 0 ? 'flex' : 'none';
+        }
+
+        function changeQuantity(index, delta) {
+            cart[index].quantity += delta;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCart();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function toggleCartModal() {
+            const modal = document.getElementById('cart-modal');
+            if (modal.style.display === 'block') {
+                modal.style.display = 'none';
+            } else {
+                updateCart();
+                modal.style.display = 'block';
+            }
+        }
+
+        function toggleOrderModal() {
+            const modal = document.getElementById('order-modal');
+            modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function showOrderForm() {
+            toggleCartModal();
+            toggleOrderModal();
+            document.getElementById('order-step-1').style.display = 'block';
+            document.getElementById('order-step-2').style.display = 'none';
+        }
+
+        function backToCart() {
+            toggleOrderModal();
+            toggleCartModal();
+        }
+
+        function backToOrderForm() {
+            document.getElementById('order-step-1').style.display = 'block';
+            document.getElementById('order-step-2').style.display = 'none';
+        }
+
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('customer-name').value;
+            const address = document.getElementById('customer-address').value;
+            const phone = document.getElementById('customer-phone').value;
+
+            document.getElementById('confirm-name').textContent = `Name: ${name}`;
+            document.getElementById('confirm-address').textContent = `Adresse: ${address}`;
+            document.getElementById('confirm-phone').textContent = `Telefon: ${phone}`;
+
+            const confirmItemsContainer = document.getElementById('confirm-items');
+            confirmItemsContainer.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                confirmItemsContainer.innerHTML += `<p>${item.quantity}x ${item.name} - ${(item.quantity * item.price).toFixed(2)} €</p>`;
+                total += item.quantity * item.price;
+            });
+            document.getElementById('confirm-total').textContent = `Gesamt: ${total.toFixed(2)} €`;
+
+            document.getElementById('order-step-1').style.display = 'none';
+            document.getElementById('order-step-2').style.display = 'block';
+        });
+
+        function submitOrder() {
+            alert('Vielen Dank für Ihre Bestellung! Wir werden uns in Kürze bei Ihnen melden.');
+            cart = [];
+            updateCart();
+            toggleOrderModal();
+            document.getElementById('order-form').reset();
+        }
+
+        function filterMenu(categoryIndex, buttonElement) {
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            buttonElement.classList.add('active');
+            displayMenu(categoryIndex);
+        }
+
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                document.getElementById('nav-menu').classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.pageYOffset > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            displayCategories();
+            displayMenu('all');
+            loadGallery();
+        });
+    </script>
+</body>
+</html>
