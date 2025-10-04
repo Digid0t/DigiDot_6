@@ -33,7 +33,7 @@
         header {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 1rem 0;
+            padding: 0.75rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -48,6 +48,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            overflow: visible;
         }
 
         .logo-container {
@@ -57,35 +58,47 @@
         }
 
         .logo {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
+            min-width: 120px;
+            min-height: 120px;
             border-radius: 50%;
-            background: white;
-            padding: 5px;
+            background: var(--secondary-color);
+            padding: 3px;
             box-shadow: var(--card-shadow);
             transition: all 0.3s ease-in-out;
-            font-size: 2.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            aspect-ratio: 1 / 1;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             transition: font-size 0.3s ease-in-out;
         }
-        
+
         header.scrolled {
-            padding: 0.25rem 0;
+            padding: 0.4rem 0;
         }
-        
+
         header.scrolled .logo {
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            min-height: 70px;
+            padding: 6px;
         }
-        
+
         header.scrolled h1 {
             font-size: 1.2rem;
         }
@@ -145,14 +158,14 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
+
         .header-cart {
             position: relative;
             cursor: pointer;
             font-size: 1.8rem;
             color: white;
         }
-        
+
         .cart-count {
             position: absolute;
             top: -5px;
@@ -171,8 +184,8 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23c0392b" width="1200" height="400"/><text x="600" y="200" font-size="120" fill="white" text-anchor="middle" font-family="Arial">TKA</text></svg>') center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://raw.githubusercontent.com/Digid0t/DigiDot_6/main/TKA_banner.png') center/cover;
             min-height: 400px;
             display: flex;
             align-items: center;
@@ -324,7 +337,7 @@
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
         }
-        
+
         .menu-item-title .item-number {
             font-size: 0.9rem;
             font-weight: normal;
@@ -370,7 +383,7 @@
             transition: background-color 0.3s ease;
             font-weight: bold;
         }
-        
+
         .add-to-cart-btn:hover {
             background-color: #229954;
         }
@@ -399,7 +412,7 @@
             max-height: 85vh;
             overflow-y: auto;
         }
-        
+
         .modal-close {
             color: #aaa;
             position: absolute;
@@ -409,11 +422,11 @@
             font-weight: bold;
             cursor: pointer;
         }
-        
+
         .modal-close:hover {
             color: black;
         }
-        
+
         #cart-items-container .cart-item {
             display: flex;
             justify-content: space-between;
@@ -421,16 +434,16 @@
             padding: 0.75rem 0;
             border-bottom: 1px solid #eee;
         }
-        
+
         #cart-items-container .cart-item-details {
             flex-grow: 1;
         }
-        
+
         #cart-items-container .cart-item-name {
             font-weight: bold;
             margin-bottom: 0.25rem;
         }
-        
+
         #cart-items-container .cart-item-price {
             color: #666;
             font-size: 0.9rem;
@@ -441,8 +454,8 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
-        #cart-items-container .quantity-btn, 
+
+        #cart-items-container .quantity-btn,
         #cart-items-container .remove-btn {
             background: #eee;
             border: none;
@@ -452,12 +465,12 @@
             cursor: pointer;
             font-size: 1rem;
         }
-        
+
         #cart-items-container .remove-btn {
             background-color: #ffdddd;
             color: var(--primary-color);
         }
-        
+
         #cart-total {
             text-align: right;
             font-size: 1.5rem;
@@ -465,14 +478,14 @@
             margin-top: 1rem;
             color: var(--primary-color);
         }
-        
+
         .modal-actions {
             display: flex;
             justify-content: flex-end;
             gap: 1rem;
             margin-top: 2rem;
         }
-        
+
         .modal-btn {
             padding: 0.8rem 1.5rem;
             border-radius: 25px;
@@ -481,48 +494,48 @@
             font-weight: bold;
             transition: all 0.3s ease;
         }
-        
+
         .btn-primary {
             background-color: var(--primary-color);
             color: white;
         }
-        
+
         .btn-primary:hover {
             background-color: #a93226;
         }
-        
+
         .btn-secondary {
             background-color: #ccc;
         }
-        
+
         .btn-secondary:hover {
             background-color: #aaa;
         }
-        
+
         .form-group {
             margin-bottom: 1rem;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
         }
-        
+
         .form-group input {
             width: 100%;
             padding: 0.8rem;
             border: 1px solid #ccc;
             border-radius: 8px;
         }
-        
+
         #confirmation-summary {
             background: #f9f9f9;
             padding: 1rem;
             border-radius: 8px;
             margin-top: 1rem;
         }
-        
+
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -658,11 +671,76 @@
             z-index: 3001;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.3rem;
+        .review-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse-glow 2s infinite;
+        }
+
+        .review-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 165, 0, 0.6);
+            animation: none;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+                transform: scale(1);
             }
-            
+            50% {
+                box-shadow: 0 6px 25px rgba(255, 165, 0, 0.6);
+                transform: scale(1.02);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 0.5rem 0;
+            }
+
+            .logo {
+                width: 70px;
+                height: 70px;
+                min-width: 70px;
+                min-height: 70px;
+                padding: 6px;
+            }
+
+            .logo-container {
+                gap: 0.5rem;
+            }
+
+            h1 {
+                font-size: 1.1rem;
+            }
+
+            header.scrolled {
+                padding: 0.3rem 0;
+            }
+
+            header.scrolled .logo {
+                width: 50px;
+                height: 50px;
+                min-width: 50px;
+                min-height: 50px;
+                padding: 4px;
+            }
+
+            header.scrolled h1 {
+                font-size: 0.95rem;
+            }
+
             nav ul {
                 display: none;
                 position: absolute;
@@ -710,7 +788,9 @@
     <header>
         <div class="header-content">
             <div class="logo-container">
-                <div class="logo">🍢</div>
+                <div class="logo">
+                    <img src="https://raw.githubusercontent.com/Digid0t/DigiDot_6/main/TKA_logo.png" alt="TKA Grillhaus Logo">
+                </div>
                 <h1>TKA Grillhaus</h1>
             </div>
             <nav>
@@ -738,31 +818,31 @@
         </div>
     </section>
 
-    <section style="background: white; padding: 2.5rem 1rem;">
+    <section style="background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('https://raw.githubusercontent.com/Digid0t/DigiDot_6/main/Genüse_t2.png') center/cover; padding: 2.5rem 1rem;">
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-title">Für jeden etwas dabei</h2>
-            
+
             <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem;">
-                <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%); padding: 1.5rem; border-radius: 12px; box-shadow: var(--card-shadow);">
+                <div style="flex: 1; min-width: 280px; background: rgba(255, 245, 230, 0.95); padding: 1.5rem; border-radius: 12px; box-shadow: var(--card-shadow); backdrop-filter: blur(5px);">
                     <h3 style="color: var(--primary-color); margin-bottom: 0.8rem; font-size: 1.3rem;">Willkommen in der Familie</h3>
                     <p style="line-height: 1.7; color: #555; font-size: 0.95rem;">
-                        Direkt an der <strong>Berliner Straße</strong> steht unser frisch renoviertes Grillhaus. 
+                        Direkt an der <strong>Berliner Straße</strong> steht unser frisch renoviertes Grillhaus.
                         Egal ob Oma und Opa, Mama oder die Kids - bei uns findet jeder was Leckeres.
                     </p>
                 </div>
-                
-                <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #ffe8cc 0%, #ffd9b3 100%); padding: 1.5rem; border-radius: 12px; box-shadow: var(--card-shadow);">
+
+                <div style="flex: 1; min-width: 280px; background: rgba(255, 232, 204, 0.95); padding: 1.5rem; border-radius: 12px; box-shadow: var(--card-shadow); backdrop-filter: blur(5px);">
                     <h3 style="color: var(--secondary-color); margin-bottom: 0.8rem; font-size: 1.3rem;">Riesige Auswahl</h3>
                     <p style="line-height: 1.7; color: #555; font-size: 0.95rem;">
-                        Von klassischem Döner über knusprige Steinofen-Pizza bis zu köstlichen Nudelgerichten. 
+                        Von klassischem Döner über knusprige Steinofen-Pizza bis zu köstlichen Nudelgerichten.
                         Türkische Spezialitäten, handgemachte Pide und vegetarische Highlights.
                     </p>
                 </div>
             </div>
-            
-            <div style="margin-top: 1.5rem; background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--primary-color);">
+
+            <div style="margin-top: 1.5rem; background: rgba(248, 249, 250, 0.95); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--primary-color); backdrop-filter: blur(5px);">
                 <h3 style="color: var(--dark-color); margin-bottom: 1rem; font-size: 1.2rem; text-align: center;">Unsere Besonderheiten</h3>
-                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1rem;">
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
                         <span style="font-size: 1.4rem;">🪑</span>
                         <span style="color: #555; font-weight: 500; font-size: 0.95rem;">Sitzplätze</span>
@@ -779,6 +859,11 @@
                         <span style="font-size: 1.4rem;">🚚</span>
                         <span style="color: #555; font-weight: 500; font-size: 0.95rem;">Lieferung</span>
                     </div>
+                </div>
+                <div style="text-align: center; margin-top: 1rem;">
+                    <a href="https://www.google.com/search?client=firefox-b-m&sca_esv=8afbc7b76fba52db&sxsrf=AE3TifMZf4Emgtk1RGJHwtuvf3e-t0JfQA:1759580617853&q=tka+grillhaus+rezensionen&ludocid=13960229570428993919&ibp=gwp;0,7&hl=de-DE&sa=X&ved=2ahUKEwjC87jNxIqQAxVpzQIHHWklHXwQ9fQKegQIIxAF&biw=118&bih=240&dpr=3#lkt=LocalPoiReviews&lpg=cid:CgIgAQ%3D%3D" target="_blank" rel="noopener noreferrer" class="review-button">
+                        ⭐ Bewerte uns auf Google
+                    </a>
                 </div>
             </div>
         </div>
@@ -807,13 +892,13 @@
                     Deutschland
                 </p>
                 <a href="https://www.google.com/maps?cid=13960229570428993919" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; font-size: 0.9rem; margin-bottom: 0.8rem; transition: background 0.3s;">📍 Route planen</a>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10000!2d11.029844!3d50.978389!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc1c1f43ddb3dcdff!2sTKA+Grillhaus!5e0!3m2!1sde!2sde!4v1640000000000" 
-                    width="100%" 
-                    height="180" 
-                    style="border:0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" 
-                    allowfullscreen="" 
-                    loading="lazy" 
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10000!2d11.029844!3d50.978389!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc1c1f43ddb3dcdff!2sTKA+Grillhaus!5e0!3m2!1sde!2sde!4v1640000000000"
+                    width="100%"
+                    height="180"
+                    style="border:0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+                    allowfullscreen=""
+                    loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
@@ -845,7 +930,7 @@
             <p>Mit Liebe für die ganze Familie</p>
         </div>
     </footer>
-    
+
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="toggleCartModal()">×</span>
@@ -858,7 +943,7 @@
             </div>
         </div>
     </div>
-    
+
     <div id="order-modal" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="toggleOrderModal()">×</span>
@@ -945,7 +1030,7 @@
         // Galerie laden
         function loadGallery() {
             const galleryGrid = document.getElementById('gallery-grid');
-            
+
             if (galleryImages.length === 0) {
                 galleryGrid.innerHTML = '<p style="text-align: center; color: #999; grid-column: 1/-1; padding: 2rem;">Galerie-Bilder folgen in Kürze...</p>';
                 return;
@@ -955,14 +1040,14 @@
                 const div = document.createElement('div');
                 div.className = 'gallery-item';
                 div.onclick = () => openImageModal(image.src);
-                
+
                 const img = document.createElement('img');
                 img.dataset.src = image.src;
                 img.alt = image.alt || 'TKA Grillhaus';
                 img.loading = 'lazy';
                 img.style.opacity = '0';
                 img.style.transition = 'opacity 0.3s';
-                
+
                 observer.observe(img);
                 div.appendChild(img);
                 galleryGrid.appendChild(div);
@@ -994,15 +1079,15 @@
                 container.appendChild(btn);
             });
         }
-        
+
         function displayMenu(categoryIndex = 'all') {
             const container = document.getElementById('menu-container');
             container.innerHTML = '';
 
-            let categoriesToDisplay = (categoryIndex === 'all') 
-                ? menuData.categories 
+            let categoriesToDisplay = (categoryIndex === 'all')
+                ? menuData.categories
                 : [menuData.categories[categoryIndex]];
-            
+
             categoriesToDisplay.forEach(category => {
                 category.items.forEach(item => {
                     const menuItem = createMenuItem(item);
@@ -1039,22 +1124,22 @@
                     </div>
                 </div>
             `;
-            
+
             // Lazy loading für Menu-Bilder
             if (item.image_url) {
                 const img = div.querySelector('.menu-item-image');
                 if (img) observer.observe(img);
             }
-            
+
             return div;
         }
-        
+
         function addToCart(item) {
             const cartItem = {
                 name: item.name_de,
                 price: item.price_eur
             };
-            
+
             const existingItem = cart.find(ci => ci.name === cartItem.name);
             if (existingItem) {
                 existingItem.quantity++;
@@ -1063,13 +1148,13 @@
             }
             updateCart();
         }
-        
+
         function updateCart() {
             const cartContainer = document.getElementById('cart-items-container');
             const cartTotalEl = document.getElementById('cart-total');
             const cartCountEl = document.getElementById('cart-count');
             const checkoutBtn = document.getElementById('checkout-btn');
-            
+
             cartContainer.innerHTML = '';
             let total = 0;
             let count = 0;
@@ -1099,12 +1184,12 @@
                     count += item.quantity;
                 });
             }
-            
+
             cartTotalEl.textContent = `Gesamt: ${total.toFixed(2)} €`;
             cartCountEl.textContent = count;
             cartCountEl.style.display = count > 0 ? 'flex' : 'none';
         }
-        
+
         function changeQuantity(index, delta) {
             cart[index].quantity += delta;
             if (cart[index].quantity <= 0) {
@@ -1127,39 +1212,39 @@
                 modal.style.display = 'block';
             }
         }
-        
+
         function toggleOrderModal() {
             const modal = document.getElementById('order-modal');
             modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
         }
-        
+
         function showOrderForm() {
             toggleCartModal();
             toggleOrderModal();
             document.getElementById('order-step-1').style.display = 'block';
             document.getElementById('order-step-2').style.display = 'none';
         }
-        
+
         function backToCart() {
             toggleOrderModal();
             toggleCartModal();
         }
-        
+
         function backToOrderForm() {
             document.getElementById('order-step-1').style.display = 'block';
             document.getElementById('order-step-2').style.display = 'none';
         }
-        
+
         document.getElementById('order-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('customer-name').value;
             const address = document.getElementById('customer-address').value;
             const phone = document.getElementById('customer-phone').value;
-            
+
             document.getElementById('confirm-name').textContent = `Name: ${name}`;
             document.getElementById('confirm-address').textContent = `Adresse: ${address}`;
             document.getElementById('confirm-phone').textContent = `Telefon: ${phone}`;
-            
+
             const confirmItemsContainer = document.getElementById('confirm-items');
             confirmItemsContainer.innerHTML = '';
             let total = 0;
