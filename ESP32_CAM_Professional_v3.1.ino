@@ -45,15 +45,15 @@
 
 // WLAN-Client-Modus (verbindet sich mit bestehendem WLAN)
 const char* WIFI_SSID = "Wilde_Hilde";              // Dein WLAN-Name
-const char* WIFI_PASSWORD = "weildubistgeil0815";   // Dein WLAN-Passwort
+const char* WIFI_PASSWORD = "_____";   // Dein WLAN-Passwort
 
 // Access Point Modus (Fallback wenn WLAN nicht erreichbar)
 const char* AP_SSID = "ESP32-CAM-Wilde";            // Name des ESP32-CAM AP
-const char* AP_PASSWORD = "weildubistgeil0815";              // AP-Passwort (min. 8 Zeichen!)
+const char* AP_PASSWORD = "____";              // AP-Passwort (min. 8 Zeichen!)
 
 // Webserver Authentifizierung
 const char* HTTP_USERNAME = "moni";                // Web-Login Benutzername
-const char* HTTP_PASSWORD = "weildubistgeil0815";            // Web-Login Passwort
+const char* HTTP_PASSWORD = "_____";            // Web-Login Passwort
 
 // Timeout-Einstellungen
 #define WIFI_CONNECT_TIMEOUT 20000  // 20 Sekunden Timeout für WLAN-Verbindung
